@@ -42,7 +42,7 @@ export default function Home() {
       <div className="w-full ">
         <div className="sideHeaderContainer flex  gap-3 ">
           {/* Side Header */}
-          <div className="side-header  w-full md:w-[50px] py-2 md:py-40 md:flex-col flex justify-center gap-2 md:gap-7">
+          <div className="side-header md:h-[550px]  w-full md:w-[50px] py-2 pl-2 md:py-10 md:flex-col flex justify-center items-center gap-2 md:gap-7">
             <div className="cursor-pointer bg-[#E655271A] rounded-md w-[40px] h-[40px] flex justify-center items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
