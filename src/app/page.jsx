@@ -9,13 +9,24 @@ import fruit5 from "../../public/d34466801324f00f59c5f081d8ca76a0.png";
 import { BsFacebook, BsTwitter, BsLinkedin, BsTextareaT } from "react-icons/bs";
 import { AiOutlineSmallDash } from "react-icons/ai";
 import { IoIosArrowUp } from "react-icons/io";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [open,setOpen]=useState(false)
   useEffect(() => {
     const humbarger = document.querySelector(".fruitFuilter-expander");
     humbarger.addEventListener("click", () => {
-      document.querySelector(".fruitFuilter").classList.toggle("ffHidden")
+      if(open){
+        setOpen(false)
+        // document.querySelector(".fruitFuilter").classList.add("ffopen")
+        // document.querySelector(".fruitFuilter").classList.remove("ffHidden")
+      }
+      else{
+        setOpen(true)
+      }
+      // document.querySelector(".fruitFuilter").classList.toggle("ffopen")
+        // document.querySelector(".fruitFuilter").classList.remove("ffopen")
+        // document.querySelector(".fruitFuilter").classList.add("ffHidden")
     });
   });
   // const humbarger=document.querySelector(".fruitFuilter-expander")
@@ -205,7 +216,7 @@ export default function Home() {
           {/* Home Content */}
           <div className="content bg-[#EEF0F2] rounded-tl-xl">
             <div className="home_content flex  gap-2 m-2">
-              <div className="fruitFuilter ffHidden border filterContainer  w-[18%] h-[838px] rounded-xl bg-white p-2">
+              <div className={`fruitFuilter  border filterContainer  w-[18%] h-[838px] rounded-xl bg-white p-2 ${open?"ffopen":"ffHidden"}`}>
                 <div className="flex items-center border rounded-xl p-1">
                   <div className="button py-1 w-1/2 bg-[#E655271A] text-center rounded-md">
                     Fruits
